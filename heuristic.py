@@ -1,5 +1,6 @@
 from itertools import tee, islice, chain
 from typing import List
+import math
 
 EMPTY_CELL = 0
 WHITE_CELL = 1
@@ -182,7 +183,7 @@ class Pattern:
         if self.ends_nb == 0 and self.size < 5:
             return 0
         if self.size >= 5:
-            return 50000
+            return +math.inf
         return {
             4: {  # size of 4
                 1: {True: 10000, False: 2},  # one open end current turn or not
